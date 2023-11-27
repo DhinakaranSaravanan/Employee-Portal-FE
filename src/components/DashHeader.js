@@ -10,6 +10,7 @@ import {
     faUserPlus
  } from '@fortawesome/free-solid-svg-icons'
 import useAuth from '../hooks/useAuth'
+import PulseLoader from 'react-spinners/PulseLoader'
 
 const  DASH_REGEX = /^\/dash(\/)?$/
 const  NOTES_REGEX = /^\/dash\/notes(\/)?$/
@@ -103,7 +104,7 @@ const DashHeader = () => {
     const errClass = isError ? 'errmsg' : 'offscreen'    
     let buttonContent =null
     if(isLoading){
-        buttonContent = <p>Logging Out ....</p>
+        buttonContent = <PulseLoader color={"#FFF"} />
     } else {
         buttonContent = 
         <>  {newNoteButton}           

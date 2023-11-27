@@ -4,6 +4,7 @@ import {useRefreshMutation} from './authApiSlice'
 import usePresist from '../../hooks/usePresist'
 import {selectCurrentToken} from './authSlice'
 import { useSelector } from 'react-redux'
+import PulseLoader from 'react-spinners/PulseLoader'
 
 const PresistLogin = () => {
     const [presist] = usePresist()
@@ -44,7 +45,7 @@ const PresistLogin = () => {
     } else if(isLoading){
         //presist : yes, token :no
         console.log('loading');
-        content = <p>Loading...</p>
+        content = <PulseLoader color={"#FFF"} />
     } else if(isError){
         //presist : yes, token :no
         console.log('error');

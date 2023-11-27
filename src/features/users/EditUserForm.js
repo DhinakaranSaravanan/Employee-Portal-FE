@@ -46,7 +46,7 @@ const EditUserForm = ({user}) => {
             setRoles([])
             navigate('/dash/users')
         }
-    },[isSuccess, isDelSuccess])
+    },[isSuccess, isDelSuccess, navigate])
 
     //handlers
     const onUsernameChanged = (e) => setUsername(e.target.value)
